@@ -8,6 +8,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 plugins {
     id("kotlin-multiplatform-conventions")
     id("kotlin-multiplatform-publish-conventions")
+    id("org.jetbrains.kotlinx.kover")
 }
 
 ext {
@@ -383,4 +384,8 @@ tasks.clean {
     setDelete(layout.buildDirectory.asFileTree.matching {
         exclude("tmp/.cache/expanded/expanded.lock")
     })
+}
+
+tasks.named("koverHtmlReport") {
+    dependsOn(tasks.named("jvmTest"))
 }

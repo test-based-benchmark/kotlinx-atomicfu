@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
 
 plugins {
     alias(libs.plugins.kotlinx.binaryCompatibilityValidator)
+    id("org.jetbrains.kotlinx.kover") version "0.8.3" apply true
 }
 
 val deploy: Task? by tasks.creating {
