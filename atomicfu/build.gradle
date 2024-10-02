@@ -386,6 +386,6 @@ tasks.clean {
     })
 }
 
-tasks.named("koverHtmlReport") {
+tasks.named("koverXmlReport") {
     dependsOn(tasks.named("jvmTest"))
 }
